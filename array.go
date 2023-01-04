@@ -133,3 +133,14 @@ func ArrayReverse[I any](arr []I) []I {
 
 	return res
 }
+
+// ArrayContains returns bool if the element in the array, otherwise returns false.
+func ArrayContains[I comparable](arr []I, elem I) bool {
+	for _, i := range arr {
+		if i == elem {
+			return true
+		}
+	}
+
+	return false
+}
