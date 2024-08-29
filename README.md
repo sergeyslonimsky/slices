@@ -1,6 +1,6 @@
 # Go Slices
 
-![Build Status](https://github.com/sergeyslonimsky/slices/workflows/CI/badge.svg)
+[![CodeQL](https://github.com/sergeyslonimsky/slices/actions/workflows/codeql.yml/badge.svg)](https://github.com/sergeyslonimsky/slices/actions/workflows/codeql.yml)
 [![Release](https://img.shields.io/github/v/release/sergeyslonimsky/slices)](https://github.com/sergeyslonimsky/slices/releases/latest)
 
 ## Introduction
