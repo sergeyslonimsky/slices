@@ -2,6 +2,7 @@
 
 [![CodeQL](https://github.com/sergeyslonimsky/slices/actions/workflows/codeql.yml/badge.svg)](https://github.com/sergeyslonimsky/slices/actions/workflows/codeql.yml)
 [![Release](https://img.shields.io/github/v/release/sergeyslonimsky/slices)](https://github.com/sergeyslonimsky/slices/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Introduction
 
