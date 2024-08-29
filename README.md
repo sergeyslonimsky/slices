@@ -1,6 +1,7 @@
 # Go Slices
 
 ![Build Status](https://github.com/sergeyslonimsky/slices/workflows/CI/badge.svg)
+[![Release](https://img.shields.io/github/v/release/sergeyslonimsky/slices)](https://github.com/sergeyslonimsky/slices/releases/latest)
 
 ## Introduction
 
