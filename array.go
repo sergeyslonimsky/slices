@@ -1,5 +1,7 @@
 package slices
 
+import "fmt"
+
 // ArrayMap creates a new array populated with the results of calling a provided function
 // on every element in the calling array.
 func ArrayMap[I, T any](arr []I, callback func(key int, value I) T) []T {
@@ -10,6 +12,24 @@ func ArrayMap[I, T any](arr []I, callback func(key int, value I) T) []T {
 	}
 
 	return r
+}
+
+// ArrayMapWithError creates a new array populated with the results of calling a provided function
+// on every element in the calling array.
+// Returns first error, if callback fails.
+func ArrayMapWithError[I, T any](arr []I, callback func(key int, value I) (T, error)) ([]T, error) {
+	r := make([]T, 0, len(arr))
+
+	for i, v := range arr {
+		res, err := callback(i, v)
+		if err != nil {
+			return nil, fmt.Errorf("callback: %w", err)
+		}
+
+		r = append(r, res)
+	}
+
+	return r, nil
 }
 
 // ArrayForEach executes a provided function once for each array element.
