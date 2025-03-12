@@ -164,3 +164,15 @@ func ArrayContains[I comparable](arr []I, elem I) bool {
 
 	return false
 }
+
+// ArrayProcess creates a new array populated with the results of calling a provided function
+// on every element in the calling array.
+func ArrayProcess[I, T any](arr []I, callback func(value I) T) []T {
+	r := make([]T, 0, len(arr))
+
+	for _, v := range arr {
+		r = append(r, callback(v))
+	}
+
+	return r
+}
