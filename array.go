@@ -14,10 +14,10 @@ func ArrayMap[I, T any](arr []I, callback func(key int, value I) T) []T {
 	return r
 }
 
-// ArrayMapWithError creates a new array populated with the results of calling a provided function
+// ArrayMapErr creates a new array populated with the results of calling a provided function
 // on every element in the calling array.
 // Returns first error, if callback fails.
-func ArrayMapWithError[I, T any](arr []I, callback func(key int, value I) (T, error)) ([]T, error) {
+func ArrayMapErr[I, T any](arr []I, callback func(key int, value I) (T, error)) ([]T, error) {
 	r := make([]T, 0, len(arr))
 
 	for i, v := range arr {
@@ -175,4 +175,22 @@ func ArrayProcess[I, T any](arr []I, callback func(value I) T) []T {
 	}
 
 	return r
+}
+
+// ArrayProcessErr creates a new array populated with the results of calling a provided function
+// on every element in the calling array.
+// Returns first error, if callback fails.
+func ArrayProcessErr[I, T any](arr []I, callback func(value I) (T, error)) ([]T, error) {
+	r := make([]T, 0, len(arr))
+
+	for _, v := range arr {
+		res, err := callback(v)
+		if err != nil {
+			return nil, fmt.Errorf("callback: %w", err)
+		}
+
+		r = append(r, res)
+	}
+
+	return r, nil
 }
